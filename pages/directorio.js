@@ -42,7 +42,7 @@ const DirectorioPage = () => {
 
   const fetchProfiles = async () => {
     const res = await fetch('/api/profiles');
-    if (res.ok) setProfiles(await res.json());
+    if (res.ok) { const d = await res.json(); setProfiles(Array.isArray(d) ? d : []); }
   };
 
   useEffect(() => {
@@ -52,12 +52,12 @@ const DirectorioPage = () => {
     fetchProfiles().then(() => {});
     // Pre-fill form from existing profile
     fetch('/api/profiles').then(r => r.json()).then(data => {
-      const mine = data.find(p => p.userId === current.id);
+      const mine = Array.isArray(data) ? data.find(p => p.userId === current.id) : null;
       if (mine) setForm({ nombre: mine.nombre || '', cargo: mine.cargo || '', correo: mine.correo || '', telefonoEmpresa: mine.telefonoEmpresa || '', telefonoPersonal: mine.telefonoPersonal || '' });
     });
     // Pre-fill bank form
     fetch('/api/banking').then(r => r.json()).then(data => {
-      const mine = data.find(b => b.userId === current.id);
+      const mine = Array.isArray(data) ? data.find(b => b.userId === current.id) : null;
       if (mine) setBankForm({ nombreApellido: mine.nombreApellido || '', iban: mine.iban || '', banco: mine.banco || '', correoBank: mine.correoBank || '', documento: mine.documento || '', swift: mine.swift || '' });
     }).catch(() => {});
   }, [router]);

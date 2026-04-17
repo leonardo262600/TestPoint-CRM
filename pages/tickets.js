@@ -21,7 +21,7 @@ const TicketsPage = () => {
     setSession(current);
     fetch('/api/tickets')
       .then((r) => r.json())
-      .then(setTickets)
+      .then((data) => setTickets(Array.isArray(data) ? data : []))
       .catch(() => {});
   }, [router]);
 

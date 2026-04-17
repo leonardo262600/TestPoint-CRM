@@ -15,7 +15,7 @@ const TicketsPendientesPage = () => {
   const fetchTickets = () => {
     fetch('/api/tickets')
       .then((r) => r.json())
-      .then((all) => setTickets(all))
+      .then((all) => setTickets(Array.isArray(all) ? all : []))
       .catch(() => {});
   };
 
@@ -50,8 +50,9 @@ const TicketsPendientesPage = () => {
     fetch('/api/tickets')
       .then((r) => r.json())
       .then(async (all) => {
-        await markRepliesAsSeen(all, current);
-        setTickets(all);
+        const arr = Array.isArray(all) ? all : [];
+        await markRepliesAsSeen(arr, current);
+        setTickets(arr);
       })
       .catch(() => {});
   }, [router]);
