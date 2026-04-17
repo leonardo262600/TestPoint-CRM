@@ -1,0 +1,224 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Leonardo Ramos",
+      "email": "admin@crm.com",
+      "password": "admin123",
+      "role": "CEO",
+      "viewConfig": {
+        "clientFields": [
+          "name",
+          "email",
+          "phone",
+          "company",
+          "status"
+        ],
+        "canEditClients": true
+      }
+    },
+    {
+      "id": "2",
+      "name": "Nazaret Di Nino",
+      "email": "vendedor1@crm.com",
+      "password": "ventas123",
+      "role": "Closer",
+      "viewConfig": {
+        "clientFields": [
+          "email",
+          "phone",
+          "name"
+        ],
+        "canEditClients": true
+      }
+    },
+    {
+      "id": "3",
+      "name": "Vendedor 2",
+      "email": "vendedor2@crm.com",
+      "password": "ventas321",
+      "role": "seller",
+      "viewConfig": {
+        "clientFields": [
+          "name",
+          "email"
+        ],
+        "canEditClients": false
+      }
+    },
+    {
+      "id": "4",
+      "name": "Alvaro",
+      "email": "alvaro@crm.com",
+      "password": "ventas123",
+      "role": "Closer",
+      "viewConfig": {
+        "clientFields": [
+          "email",
+          "phone",
+          "name"
+        ],
+        "canEditClients": true
+      }
+    },
+    {
+      "id": "5",
+      "name": "Lucia",
+      "email": "lucia@crm.com",
+      "password": "ventas123",
+      "role": "Closer",
+      "viewConfig": {
+        "clientFields": [
+          "email",
+          "phone",
+          "name"
+        ],
+        "canEditClients": true
+      }
+    },
+    {
+      "id": "6",
+      "name": "Marcos",
+      "email": "marcos@crm.com",
+      "password": "ventas123",
+      "role": "Closer",
+      "viewConfig": {
+        "clientFields": [
+          "email",
+          "phone",
+          "name"
+        ],
+        "canEditClients": true
+      }
+    },
+    {
+      "id": "7",
+      "name": "Paula",
+      "email": "paula@crm.com",
+      "password": "ventas123",
+      "role": "Closer",
+      "viewConfig": {
+        "clientFields": [
+          "email",
+          "phone",
+          "name"
+        ],
+        "canEditClients": true
+      }
+    },
+    {
+      "id": "8",
+      "name": "Diego",
+      "email": "diego@crm.com",
+      "password": "ventas123",
+      "role": "Closer",
+      "viewConfig": {
+        "clientFields": [
+          "email",
+          "phone",
+          "name"
+        ],
+        "canEditClients": true
+      }
+    },
+    {
+      "id": "9",
+      "name": "Carla",
+      "email": "carla@crm.com",
+      "password": "ventas123",
+      "role": "Closer",
+      "viewConfig": {
+        "clientFields": [
+          "email",
+          "phone",
+          "name"
+        ],
+        "canEditClients": true
+      }
+    },
+    {
+      "id": "10",
+      "name": "Ivan",
+      "email": "ivan@crm.com",
+      "password": "ventas123",
+      "role": "Closer",
+      "viewConfig": {
+        "clientFields": [
+          "email",
+          "phone",
+          "name"
+        ],
+        "canEditClients": true
+      }
+    },
+    {
+      "id": "11",
+      "name": "Sofia",
+      "email": "sofia@crm.com",
+      "password": "ventas123",
+      "role": "Closer",
+      "viewConfig": {
+        "clientFields": [
+          "email",
+          "phone",
+          "name"
+        ],
+        "canEditClients": true
+      }
+    }
+  ],
+  "profiles": [
+    {
+      "userId": "2",
+      "nombre": "Leonardo Ramos",
+      "cargo": "Closer",
+      "correo": "leonardo262600@gmail.com",
+      "telefonoPersonal": "+34603267596",
+      "telefonoEmpresa": "+34603267596"
+    }
+  ],
+  "banking": [
+    {
+      "userId": "2",
+      "nombreApellido": "nazaret",
+      "iban": "xjshsyuduagddandsjkan",
+      "banco": "dsdsd",
+      "documento": "dsdsds",
+      "swift": "dsadada"
+    }
+  ],
+  "clients": [
+    {
+      "id": "101",
+      "name": "Carlos Pérez",
+      "email": "carlos.perez@cliente.com",
+      "phone": "+34 600 123 456",
+      "company": "Grupo Alfa",
+      "status": "Contactado"
+    },
+    {
+      "id": "102",
+      "name": "María Gómez",
+      "email": "maria.gomez@empresa.com",
+      "phone": "+34 600 789 012",
+      "company": "Soluciones Beta",
+      "status": "Pendiente"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "T-1776435864722",
+      "status": "finalizado",
+      "reply": "Resuelto",
+      "repliedAt": "2026-04-17T14:40:03.783Z",
+      "createdAt": "2026-04-17T14:24:24.722Z",
+      "title": "Leonardo",
+      "description": "quiero ver por que no anda?",
+      "createdBy": {
+        "id": "2",
+        "name": "Nazaret Di Nino"
+      },
+      "creatorSeenAt": "2026-04-17T14:41:34.380Z"
+    }
+  ]
+}
