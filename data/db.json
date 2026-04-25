@@ -4,7 +4,7 @@
       "id": "1",
       "name": "Leonardo Ramos",
       "email": "admin@crm.com",
-      "password": "admin123",
+      "password": "scrypt$d043b90d9c827e0d3d80c1dd94399666$dbce67a99a96b1eb4dbbd53ed22628119dc8f71595b3cf0f79bcb7b2390fdd153749848c921e1c3e2e010095249695415d9cc9ea8f7d05f79012fb8c2d2d62fb",
       "role": "CEO",
       "viewConfig": {
         "clientFields": [
@@ -21,7 +21,7 @@
       "id": "2",
       "name": "Nazaret Di Nino",
       "email": "vendedor1@crm.com",
-      "password": "ventas123",
+      "password": "scrypt$85659aac20432bf21e4ccd6cc49d8f26$ad023d9b365add2b191f24727181323e96e77f502b53e39248cd8d3a0164066aea8304b882e2854d84a6f56e615d256eab430b0334f1ba0d612677aaaa41797b",
       "role": "Closer",
       "viewConfig": {
         "clientFields": [
@@ -219,6 +219,21 @@
         "name": "Nazaret Di Nino"
       },
       "creatorSeenAt": "2026-04-17T14:41:34.380Z"
+    },
+    {
+      "id": "T-1776457254599",
+      "status": "finalizado",
+      "reply": null,
+      "repliedAt": null,
+      "creatorSeenAt": null,
+      "createdAt": "2026-04-17T20:20:54.599Z",
+      "title": "hoklasjadsh",
+      "description": "dvasdfasfas",
+      "createdBy": {
+        "id": "2",
+        "name": "Nazaret Di Nino",
+        "role": "Closer"
+      }
     }
   ]
 }

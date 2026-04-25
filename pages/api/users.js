@@ -1,4 +1,4 @@
-import { getUsers, addUser, updateUser } from '../../lib/store';
+import { getAllUsers, addUser, updateUser } from '../../lib/sqlite-users';
 import { hashPassword, requireAuth } from '../../lib/security';
 
 const sanitizeUser = (user) => {
@@ -11,7 +11,7 @@ export default async function handler(req, res) {
   if (!session) return;
 
   if (req.method === 'GET') {
-    const users = await getUsers();
+    const users = getAllUsers();
     return res.status(200).json(users.map(sanitizeUser));
   }
 
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
 
     payload.email = String(payload.email).trim().toLowerCase();
     payload.password = hashPassword(String(payload.password));
-    const user = await addUser(payload);
+    const user = addUser(payload);
     return res.status(201).json(sanitizeUser(user));
   }
 
@@ -39,7 +39,7 @@ export default async function handler(req, res) {
     if (payload.password) {
       payload.password = hashPassword(String(payload.password));
     }
-    const user = await updateUser(payload);
+    const user = updateUser(payload);
     return res.status(200).json(sanitizeUser(user));
   }
 

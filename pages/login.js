@@ -5,7 +5,6 @@ import Layout from '../components/Layout';
 
 const LoginPage = () => {
   const router = useRouter();
-  const [users, setUsers] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -15,13 +14,6 @@ const LoginPage = () => {
     if (session) {
       router.replace('/');
     }
-    fetch('/api/users')
-      .then(async (res) => {
-        if (!res.ok) return [];
-        return res.json();
-      })
-      .then((data) => setUsers(Array.isArray(data) ? data : []))
-      .catch(() => setUsers([]));
   }, [router]);
 
   const handleSubmit = async (event) => {
@@ -63,14 +55,12 @@ const LoginPage = () => {
         <form onSubmit={handleSubmit} className="form-card">
           <label>
             Correo
-            <select value={email} onChange={(e) => setEmail(e.target.value)}>
-              <option value="">Selecciona un usuario</option>
-              {users.map((user) => (
-                <option key={user.id} value={user.email}>
-                  {user.name} — {user.role}
-                </option>
-              ))}
-            </select>
+            <input
+              type="email"
+              placeholder="correo@ejemplo.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </label>
 
           <label>

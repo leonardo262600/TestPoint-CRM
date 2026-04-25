@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import { createContext, useContext, useEffect, useState } from 'react';
+import { saveSession, clearSession } from '../lib/auth';
 
 export const ThemeContext = createContext(null);
 
@@ -21,6 +22,21 @@ function App({ Component, pageProps }) {
     document.body.classList.toggle('theme-light', theme === 'light');
     window.localStorage.setItem('crm-theme', theme);
   }, [theme]);
+
+  // Sincroniza localStorage con la cookie del servidor en cada carga.
+  // Si la cookie expiró, limpia la sesión local para forzar el re-login.
+  useEffect(() => {
+    fetch('/api/me')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((user) => {
+        if (user) {
+          saveSession(user);
+        } else {
+          clearSession();
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   const toggleTheme = () => setTheme((t) => (t === 'light' ? 'dark' : 'light'));
 
